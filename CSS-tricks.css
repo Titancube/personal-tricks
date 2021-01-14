@@ -2,3 +2,10 @@
   box-shadow: 1px 0 0 0 #888, 0 1px 0 0 #888, 1px 1px 0 0 #888,
     1px 0 0 0 #888 inset, 0 1px 0 0 #888 inset;
 }
+
+/* 
+* If `position: sticky` doesn't work...
+
+`position: sticky` will not work when parent elements has `overflow: hidden`, `overflow: auto`.
+Also it will fail if it's inside a flexbox in some cases.
+*/
