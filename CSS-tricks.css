@@ -15,3 +15,33 @@
 `position: sticky` will not work when parent elements has `overflow: hidden`, `overflow: auto`.
 Also it will fail if it's inside a flexbox in some cases.
 */
+
+/* Scanline text animation (Infinite, top to bottom) */
+.txt-scanline-purple {
+  /* Background color: Must have opacity to see the background animation */
+  color: rgba(219, 0, 219, 0.5);
+  /* Scanline */
+  background: linear-gradient(
+    180deg,
+    black 45%,
+    /* Thickness of scanline can be varied by changing percentage of each color */
+      rgb(195, 0, 0) 45% 55%,
+    black 55%
+  );
+  /* background-clip: self-explanatory */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  /* background-size: Must be bigger than 100% to be animated */
+  background-size: 150% 150%;
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0% 130%;
+  }
+  100% {
+    background-position: 0% -30%;
+  }
+}
